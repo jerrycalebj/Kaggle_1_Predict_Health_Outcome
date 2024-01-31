@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: Health-Outcome-of-Horse
+Version: 1.0
+Author: Jerry Caleb
+Author-email: calebjerry90@gmail.com
+Requires-Dist: mlflow==2.7.1
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Requires-Dist: xgboost
+Requires-Dist: pandas
