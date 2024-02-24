@@ -8,3 +8,10 @@ src/My_Libraries.py
 src/Preprocessing.py
 src/SmokerStatus.py
 src/__init__.py
+src/exception.py
+src/logger.py
+src/components/__init__.py
+src/components/customtransformers.py
+src/components/data_ingestion.py
+src/components/data_transformation.py
+src/components/utils.py
