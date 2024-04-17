@@ -20,7 +20,6 @@ def feature_engineering1(df):
     df_func['HTG'] = df_func['height(cm)'] * df_func['triglyceride'] * df_func['Gtp']
     df_func['Combined'] = df_func['height(cm)'] * df_func['triglyceride'] * df_func['Gtp'] * df_func['hemoglobin'] * df_func['ALT'] * df_func['weight(kg)'] * df_func['serum creatinine'] / 10000
     df_func['hearing'] = df_func.apply(lambda row: 1 if (row['hearing(right)'] == 2 or row['hearing(left)'] == 2) else 0, axis=1)
-
     return df_func
 
 def dimensionality_reduction(df):

@@ -9,6 +9,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model import ModelConfig
+from src.components.model import ModelTrainer
+
 @dataclass
 class DataIngestionConig:
     train_data_path : str = os.path.join('artifacts','train.csv')
@@ -29,6 +32,8 @@ class DataIngestion :
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok = True)
             os.makedirs(os.path.dirname(self.ingestion_config.test_data_path),exist_ok = True)
 
+            df_train.drop(['id'], axis=1, inplace=True)
+
             df_train.to_csv(self.ingestion_config.train_data_path,index = False, header = True)
             df_test.to_csv(self.ingestion_config.test_data_path,index = False, header = True)
             logging.info('Data ingestion completed')
@@ -44,3 +49,6 @@ if __name__ == "__main__" :
 
     data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model(train_arr,test_arr))
